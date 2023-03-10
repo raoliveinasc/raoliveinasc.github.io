@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg data-bbox="0 0 0 0" overflow="hidden" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="89" width="95" data-type="ugc">
+    <g>
+        <defs>
+            <clipPath id="806dc9f3-60e7-4e48-9bd1-852af6319d69">
+                <path d="M95 0v89H0V0h95z"/>
+            </clipPath>
+            <clipPath id="1a0a57e2-8f5c-4abf-9cb2-c8f3cae706a8">
+                <path d="M731583 0v685859H0V0h731583z"/>
+            </clipPath>
+            <clipPath id="22ca49d8-93d6-486f-9bec-55055404ecbc">
+                <path d="M723963 0v678239H0V0h723963z"/>
+            </clipPath>
+        </defs>
+        <g clip-path="url(#806dc9f3-60e7-4e48-9bd1-852af6319d69)">
+            <g transform="scale(.00013)" clip-path="url(#1a0a57e2-8f5c-4abf-9cb2-c8f3cae706a8)">
+                <g clip-path="url(#22ca49d8-93d6-486f-9bec-55055404ecbc)">
+                    <use transform="scale(7620.66)" xlink:href="#c5bf6e31-e7d7-47c6-a718-d8e4df94a4e5" height="100%" width="100%"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
