@@ -18,7 +18,7 @@ export default function Header({pathnamed}) {
         { href: '/', text: 'INÍCIO' },
         { href: '/budget', text: 'ORÇAMENTO' },
         { href: '/services', text: 'SERVIÇOS' },
-        { href: '/myotto', text: 'MINHA OTTOMOTOS' },
+        { href: '/ottomotos', text: 'MINHA OTTOMOTOS' },
         { href: '/company', text: 'EMPRESA' }
       ]
 
