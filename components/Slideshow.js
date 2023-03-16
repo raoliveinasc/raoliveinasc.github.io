@@ -27,8 +27,11 @@ export default function Slideshow({}) {
                 <div className="each-slide-effect">
                     <div className="slide curiosidade">
                             <div className="centered-curiosidade">
-                                Troca de óleo parece simples, mas precisa ser feita com <b>seriedade</b>. Quase sempre a troca de óleo de uma moto parece ser simples mas quando não realizada de maneira inadequada pode causar sérios defeitos no motor de sua moto. 
-                                Você sabia disso? A dica é sempre procurar uma empresa especializada em troca de óleo com bom conceito no mercado. 
+                                <div className='curiosidade-title'>#DicaOttoMotos</div>
+                                <div className='curiosidade-sector'>
+                                    <span className='span-curiosidade'>Troca de óleo parece simples, mas precisa ser feita com <b>seriedade</b>. Quase sempre a troca de óleo de uma moto parece ser simples mas quando não realizada de maneira inadequada pode causar sérios defeitos no motor de sua moto. </span>
+                                    <span className='span-curiosidade'>Você sabia disso? A dica é sempre procurar uma empresa especializada em troca de óleo com bom conceito no mercado. </span>
+                                </div>
                             </div>
                         </div>
                     </div>

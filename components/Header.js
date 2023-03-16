@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 import { Montserrat } from 'next/font/google'
 
 const montserrat = Montserrat({
-    weight: ['300', '400', '600', '700', '800'],
+    weight: ['200', '300', '400','500', '600', '700', '800'],
     subsets: ['latin']
 })
 
@@ -17,8 +17,8 @@ export default function Header({pathnamed}) {
     const links = [
         { href: '/', text: 'INÍCIO' },
         { href: '/budget', text: 'ORÇAMENTO' },
+        { href: '/agendamento', text: 'AGENDAMENTO' },
         { href: '/services', text: 'SERVIÇOS' },
-        { href: '/ottomotos', text: 'MINHA OTTOMOTOS' },
         { href: '/company', text: 'EMPRESA' }
       ]
 
