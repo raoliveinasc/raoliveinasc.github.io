@@ -8,6 +8,7 @@ import Header from '@/components/Header'
 import RequestBudget from '@/components/RequestBudget'
 import WhyOtto from '@/components/WhyOtto'
 import Footer from '@/components/Footer'
+import AccordionOtto from '@/components/AccordionOtto'
 
 const montserrat = Montserrat({
   weight: ['300', '400', '600', '700', '800'],
@@ -35,6 +36,7 @@ export default function Home() {
           <Services/>
           <RequestBudget/>
           <WhyOtto/>
+          <AccordionOtto/>
           <Footer/>
       </main>
     </>

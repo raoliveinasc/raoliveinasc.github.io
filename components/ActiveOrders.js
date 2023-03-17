@@ -24,7 +24,7 @@ export default function ActiveOrders() {
                 <div className="legenda">Fixa - Oficina Fixa</div>
                 <div className="legenda">Móvel - Oficina Móvel (Van)</div>
               </div>
-              <Link href="/" className="agendar-ao">AGENDAR SERVIÇO</Link>
+              <Link href="/agendamento" className="agendar-ao">AGENDAR SERVIÇO</Link>
             </div>
         </div>
     </div>

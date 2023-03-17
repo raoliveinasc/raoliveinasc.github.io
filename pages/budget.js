@@ -32,7 +32,7 @@ export default function Budget() {
               <div className='budget-text'>Solicite um Orçamento</div>
               <div className='budget-subtitle'>Conheça o jeito mais prático de cuidar da sua motocicleta</div>
               <Trace color="orange"/>
-              <Link href="" className="agendar-ao budget-sector">ORÇAR SERVIÇO</Link>
+              <Link href="/budget" className="agendar-ao budget-sector">ORÇAR SERVIÇO</Link>
             </div>
           </div>
         </div>

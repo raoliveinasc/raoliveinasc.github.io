@@ -53,7 +53,7 @@ export default function agendamentoForm() {
     <div className='agendamento-form-section'>
         <div className='agendamento-form-center'>
             <div className='agendamento-form-title'>Agendamento</div>
-            <div className="agendamento-form-subtitle">Se você ainda não recebeu um orçamento, <Link href="/">clique aqui</Link> </div>
+            <div className="agendamento-form-subtitle">Se você ainda não recebeu um orçamento, <Link href="/budget">clique aqui</Link> </div>
             <form className="agendamento-form-main">
                 <div class="input-field">
                     <input type="text" id="name" required />

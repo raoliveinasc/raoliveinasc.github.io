@@ -79,7 +79,7 @@ export default function ServiceList() {
             <div className="services-title-second">Solicite um Orçamento</div>
             <div className="service-subtitle">Conheça o jeito mais fácil de cuidar da sua motocicleta</div>
             <Trace color="orange"/>
-            <Link href="/" className="agendar-ao service-sector">ORÇAR SERVIÇO</Link>
+            <Link href="/budget" className="agendar-ao service-sector">ORÇAR SERVIÇO</Link>
           </div>
       </div></>
   )

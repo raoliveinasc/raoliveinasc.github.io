@@ -32,7 +32,7 @@ export default function Agendamento() {
               <div className='agendamento-text'>Agende sua Visita</div>
               <div className='agendamento-subtitle'>Tenha a praticidade de cuidar da sua motocicleta na palma das suas mãos</div>
               <Trace color="white"/>
-              <Link href="/" className="agendar-ao agendamento-sector">AGENDAR SERVIÇO</Link>
+              <Link href="/agendamento" className="agendar-ao agendamento-sector">AGENDAR SERVIÇO</Link>
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function Slideshow({}) {
                                 <span>Gratuito</span>
                             </div>
                             <div className="internal-padrao-flyer">
-                                <Link className="internal-padrao-button" href="/">Agende uma visita <i class="fa-solid fa-chevron-right"></i></Link>
+                                <Link className="internal-padrao-button" href="/budget">Agende uma visita <i class="fa-solid fa-chevron-right"></i></Link>
                                 <span className="internal-padrao-info">
                                 Itens incluidos no Check Up - Freio, Pneu, Relação e Bateria 
                                 </span>
