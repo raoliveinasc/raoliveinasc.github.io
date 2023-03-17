@@ -1,10 +1,5 @@
-import Image from "next/image"
-import src1 from "../public/picture1.svg"
-import src2 from "../public/picture2.svg"
-import src3 from "../public/picture3.svg"
-import src4 from "../public/picture4.svg"
-import src5 from "../public/picture5.svg"
-import src6 from "../public/Picture6.png"
+import Trace from "./Trace"
+import Link from "next/link"
 
 export default function ServiceList() {
   return (
@@ -19,32 +14,40 @@ export default function ServiceList() {
                       <div className="service-filler"></div>
                       <div className="service-box">
                           <div className="service-box-type">TROCA</div>
-                          <div className="service-box-title">Óleos, Filtros e Fluidos</div>
-                          <div className="service-box-icon">
-                          <i class="fa-regular fa-fill-drip"></i>
+                          <div className="display-inline">
+                            <div className="service-box-title">Óleos, Filtros e Fluidos</div>
+                            <div className="service-box-icon">
+                                <i class="fa-regular fa-fill-drip fa-3x oranged-darken"></i>
+                            </div>
                           </div>
                       </div>
                       <div className="service-box">
                           <div className="service-box-type">TROCA & REPARO</div>
-                          <div className="service-box-title">Cabos, Bateria e Velas</div>
-                          <div className="service-box-icon">
-                            <i class="fa-regular fa-car-battery"></i>
+                          <div className="display-inline">
+                            <div className="service-box-title">Cabos, Bateria e Velas</div>
+                            <div className="service-box-icon">
+                                <i class="fa-regular fa-car-battery fa-3x oranged-darken"></i>
+                            </div>
                           </div>
                       </div>
                   </div>
                   <div className="service-column">
                       <div className="service-box">
                           <div className="service-box-type">TROCA & REPARO</div>
-                          <div className="service-box-title">Pneus, Câmaras e Rolamentos</div>
-                          <div className="service-box-icon">
-                          <i class="fa-regular fa-tire"></i>
+                          <div className="display-inline">
+                            <div className="service-box-title">Pneus, Câmaras e Rolamentos</div>
+                            <div className="service-box-icon">
+                                <i class="fa-regular fa-drum-steelpan fa-3x oranged-darken"></i>
+                            </div>
                           </div>
                       </div>
                       <div className="service-box">
                           <div className="service-box-type">TROCA & REPARO</div>
-                          <div className="service-box-title">Freios, Lonas e Discos</div>
-                          <div className="service-box-icon">
-                          <i class="fa-regular fa-grate-droplet"></i>
+                          <div className="display-inline">
+                            <div className="service-box-title">Freios, Lonas e Discos</div>
+                            <div className="service-box-icon">
+                                <i class="fa-regular fa-compact-disc fa-3x oranged-darken"></i>
+                            </div>
                           </div>
                       </div>
                       <div className="service-filler"></div>
@@ -53,20 +56,30 @@ export default function ServiceList() {
                       <div className="service-filler"></div>
                       <div className="service-box">
                           <div className="service-box-type">TROCA</div>
-                          <div className="service-box-title">Corrente, Correia e Relação</div>
-                          <div className="service-box-icon">
-                            <i class="fa-regular fa-gears"></i>
+                          <div className="display-inline">
+                            <div className="service-box-title">Corrente, Correia e Relação</div>
+                            <div className="service-box-icon">
+                                <i class="fa-regular fa-gears fa-3x oranged-darken"></i>
+                            </div>
                           </div>
                       </div>
                       <div className="service-box">
                           <div className="service-box-type">TROCA</div>
-                          <div className="service-box-title">Suspensões, Hidráulicos e Pressão</div>
-                          <div className="service-box-icon">
-                          <i class="fa-regular fa-reel"></i>
+                          <div className="display-inline">
+                            <div className="service-box-title">Suspensões, Hidráulicos e Pressão</div>
+                            <div className="service-box-icon">
+                            <i class="fa-regular fa-gas-pump fa-3x oranged-darken"></i>
+                            </div>
                           </div>
                       </div>
                   </div>
               </div>
+          </div>
+          <div className="service-cta">
+            <div className="services-title-second">Solicite um Orçamento</div>
+            <div className="service-subtitle">Conheça o jeito mais fácil de cuidar da sua motocicleta</div>
+            <Trace color="orange"/>
+            <Link href="/" className="agendar-ao service-sector">ORÇAR SERVIÇO</Link>
           </div>
       </div></>
   )

@@ -30,9 +30,9 @@ export default function Budget() {
           <div className='budget-filter'>
             <div className='budget-internal'>
               <div className='budget-text'>Solicite um Orçamento</div>
-              <div className='budget-subtitle'>Conheça o jeito mais prático de cuidar da sua motorcicleta</div>
+              <div className='budget-subtitle'>Conheça o jeito mais prático de cuidar da sua motocicleta</div>
               <Trace color="orange"/>
-              <Link href="/" className="agendar-ao budget-sector">ORÇAR SERVIÇO</Link>
+              <Link href="" className="agendar-ao budget-sector">ORÇAR SERVIÇO</Link>
             </div>
           </div>
         </div>
