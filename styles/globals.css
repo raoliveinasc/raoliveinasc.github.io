@@ -1145,9 +1145,9 @@ main {
   }
 }
 
-.input-field {
+/* .input-field {
   position: relative;
-  width: 250px;
+  width: 40%;
   height: 44px;
   line-height: 44px;
 }
@@ -1161,7 +1161,7 @@ label {
   cursor: text;
 }
 input {
-  width: 100%;
+  width: 40%;
   border: 0;
   outline: 0;
   padding: 0.5rem 0;
@@ -1180,7 +1180,7 @@ input:focus ~ label, input:valid ~ label {
   font-size: 14px;
   top: -24px;
   color: rgb(255, 105, 0);
-}
+} */
 
 
 .dropdown-container {
@@ -1796,6 +1796,62 @@ input:focus ~ label, input:valid ~ label {
 }
 
 .accordion__panel {
-  background-color: white !important;
+  background-color: white ;
+}
 
+.faq-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 40px;
+  background-color: rgb(255, 105, 0);
+  width: 90%;
+  max-width: 900px;
+  margin: auto;
+}
+
+
+
+.haveaccount-section {
+  border-bottom: 1px solid rgb(232, 232, 232);
+  padding-bottom: 15px;
+}
+
+.haveaccount-decision {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.haveaccount-button {
+  border: 1px solid rgb(255, 105, 0);
+  border-radius: 5px;
+  margin: 0px 10px;
+  background-color: white;
+  width: 40%;
+  padding: 15px 0px;
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: rgb(255, 105, 0);
+  cursor: pointer;
+}
+
+.haveaccount-button:hover{ 
+  background-color: rgb(248, 248, 248);
+  transition: 200ms ease-in-out;
+}
+
+.basic-information-section {
+  border-bottom: 1px solid rgb(232, 232, 232);
+  padding-bottom: 15px;
+}
+
+.basic-information-internal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }

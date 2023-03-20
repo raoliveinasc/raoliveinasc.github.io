@@ -36,7 +36,7 @@ export default function Home() {
           <Services/>
           <RequestBudget/>
           <WhyOtto/>
-          <AccordionOtto/>
+          {/* <AccordionOtto/> */}
           <Footer/>
       </main>
     </>
