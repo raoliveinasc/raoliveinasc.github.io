@@ -10,7 +10,7 @@ const montserrat = Montserrat({
     subsets: ['latin']
 })
 
-export default function login() {
+export default function Login() {
 
     const session = useSession()
     const supabase = useSupabaseClient()

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 import Link from "next/link";
 import SelectMotos from "./SelectMotos";
 import Login from "./Login";
 
-export default function agendamentoForm() {
+export default function AgendamentoForm() {
 
   // React state to manage selected options
   const [selectedOptions, setSelectedOptions] = useState();
