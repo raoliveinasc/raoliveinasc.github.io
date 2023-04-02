@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import Link from "next/link";
+import SelectMotos from "./SelectMotos";
+import Login from "./Login";
 
 export default function agendamentoForm() {
 
@@ -55,10 +57,8 @@ export default function agendamentoForm() {
             <div className='agendamento-form-title'>Agendamento</div>
             <div className="agendamento-form-subtitle">Se você ainda não recebeu um orçamento, <Link href="/budget">clique aqui</Link> </div>
             <form className="agendamento-form-main">
-                <div class="input-field">
-                    <input type="text" id="name" required />
-                    <label for="name">Your name:</label>
-                </div>
+                <div className="login-surround"><Login/></div>
+                <SelectMotos/>
                 <div className="app">
                     <h2>Serviços Oferecidos</h2>
                     <div className="dropdown-container">
@@ -71,6 +71,9 @@ export default function agendamentoForm() {
                         isMulti
                         />
                     </div>
+                </div>
+                <div className="button-surround-one">
+                <button className="inserir-novo-serviço" >CONFIRMAR SERVIÇOS</button>
                 </div>
             </form>
         </div>

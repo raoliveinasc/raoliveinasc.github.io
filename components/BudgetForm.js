@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
+import Login from "./Login";
+import SelectMotos from "./SelectMotos";
 
 export default function BudgetForm() {
 
@@ -63,35 +65,8 @@ export default function BudgetForm() {
                 </ol>
             </div>
             <form className="budget-form-main">
-                <div className="haveaccount-section">
-                  <h2>Já tem conta OttoMotos?</h2>
-                  <div className="haveaccount-decision">
-                    <button className="haveaccount-button">
-                      <div className="haveaccount-button-text">Sim, tenho conta</div>
-                    </button>
-                    <button className="haveaccount-button">
-                      <div className="haveaccount-button-text">Não, ainda não</div>
-                    </button>
-                  </div>
-                </div>
-                <div className="basic-information-section">
-                  <h2>Insira seus dados pessoais</h2>
-                  <div className="basic-information-internal">
-                    <input type="text" placeholder="Insira seu nome completo" className="if-each"></input>
-                    <input type="text" placeholder="Insira seu email" className="if-each"></input>
-                  </div>
-                </div>
-                <div className="insert-moto">
-                  <h2>Motos Cadastradas</h2>
-                  <div className="moto-modelo">
-                    <div className="nome-moto">Honda CG 150</div>
-                    <div className="moto-modelo-inside">
-                      <div className="espec-moto">Cargo</div>
-                      <div className="ano-moto">2015</div>
-                    </div>
-                  </div>
-                  <button className="inserir-nova-moto">INSERIR NOVA MOTO</button>
-                </div>
+            <div className="login-surround"><Login/></div>
+                <SelectMotos/>
                 <div className="app">
                     <h2>Serviços Oferecidos</h2>
                     <div className="dropdown-container">
@@ -104,19 +79,9 @@ export default function BudgetForm() {
                         isMulti
                         />
                     </div>
-                    <button className="gerar-form">Gerar formulário</button>
                 </div>
-                <div className="form-gerado">
-                    <div className="cada-item-form">
-                      <div className="nome-item">Revisão Geral</div>
-                      <select name="qtd-item" className="qtd-item">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                      </select>
-                    </div>
+                <div className="button-surround-one">
+                <button className="inserir-novo-serviço" >CONFIRMAR SERVIÇOS</button>
                 </div>
             </form>
         </div>

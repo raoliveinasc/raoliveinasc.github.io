@@ -4,7 +4,8 @@ export default function Footer({  }) {
     const currentYear = new Date().getFullYear()
 
     return (
-        <div className="footer-surround">
+        <>
+                <div className="footer-surround">
             <div className="top-footer">
                 <div className="first-section">
                     <div className="footer-title">Venha nos visitar!</div>
@@ -44,5 +45,11 @@ export default function Footer({  }) {
             © {currentYear} by <b>Otto</b>Motos
             </div>
         </div>
+        <div class="whatsapp-surround">
+            <a href="https://api.whatsapp.com/send?phone=&amp;text=" class="whatsapp-button" title="Agende por whatsapp!">
+                <i class="fa-brands fa-whatsapp fa-2x"></i>
+            </a>
+        </div>
+        </>
     )
 }
