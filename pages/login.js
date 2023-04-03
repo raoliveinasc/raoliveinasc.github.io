@@ -4,6 +4,8 @@ import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 import Account from '@/components/Account'
 import { Montserrat } from 'next/font/google'
 import Head from 'next/head'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 const montserrat = Montserrat({
     weight: ['300', '400', '600', '700', '800'],
@@ -11,9 +13,17 @@ const montserrat = Montserrat({
 })
 
 export default function Login() {
-
+    
     const session = useSession()
     const supabase = useSupabaseClient()
+    const router = useRouter()
+    
+    useEffect(() => {
+        if(session){
+            router.push('/ottomotos')
+        }
+    });
+    
     return (   
     <>
         <Head>
@@ -23,8 +33,7 @@ export default function Login() {
         <main className={montserrat.className && "main-login"}>
             <div className='login-form-surround'>
                 <h2>Entre na sua conta OttoMotos</h2>
-                {!session ? (
-                    <Auth supabaseClient={supabase}     appearance={{
+                <Auth supabaseClient={supabase}     appearance={{
                         theme: ThemeSupa,
                         variables: {
                           default: {
@@ -76,9 +85,6 @@ export default function Login() {
                                 }
                         }
                       }}/>
-                ) : (
-                    <Account session={session} />
-                )}
             </div>
         </main>
     </>

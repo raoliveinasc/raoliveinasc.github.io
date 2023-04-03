@@ -5,6 +5,7 @@ import Login from './Login'
 import logo from "../public/main-logo.jpg"
 import { useRouter } from 'next/router'
 import { Montserrat } from 'next/font/google'
+import { useUser } from '@supabase/auth-helpers-react'
 
 const montserrat = Montserrat({
     weight: ['200', '300', '400','500', '600', '700', '800'],
@@ -26,6 +27,8 @@ export default function Header({pathnamed}) {
         logoWidth: "200px",
         navbarHeight: "140px"
     });
+
+    const user = useUser()
 
     useEffect(() => {
         const handleScroll = () => {
@@ -63,7 +66,7 @@ export default function Header({pathnamed}) {
             </Link>
             <div className='secondary-header'>
                 <div className='header-contacts'>Ligue Agora | TEL: +55 21 90000-0000</div>
-                <Login/>
+                {user ? <Login status={"Olá," +  user.email }/> :  <Login status="Entrar"/>}
             </div>
             </div>
         </div>

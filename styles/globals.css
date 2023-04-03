@@ -2231,3 +2231,24 @@ input:focus ~ label, input:valid ~ label {
 .main-login {
   padding: 100px 0px 500px;
 }
+
+.settings-button {
+  color: rgb(255, 105, 0);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px 0px -70px;
+  background-color: white;
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.settings-button:hover{ 
+  background-color: rgb(234, 233, 233);
+  transition: 200ms ease-in-out;
+}

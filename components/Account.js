@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react'
+import { useRouter } from 'next/router'
 
 export default function Account({ session }) {
   const supabase = useSupabaseClient()
   const user = useUser()
   const [loading, setLoading] = useState(true)
-  const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
-  const [avatar_url, setAvatarUrl] = useState(null)
+  const [motoModel, setMotoModel] = useState(null)
+  const [motoYear, setMotoYear] = useState(null)
+  const [motoSpec, setMotoSpec] = useState(null)
+  const router = useRouter()
 
   useEffect(() => {
     getProfile()
@@ -19,7 +21,7 @@ export default function Account({ session }) {
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url`)
+        .select(`moto_model, moto_year, moto_spec`)
         .eq('id', user.id)
         .single()
 
@@ -28,9 +30,9 @@ export default function Account({ session }) {
       }
 
       if (data) {
-        setUsername(data.username)
-        setWebsite(data.website)
-        setAvatarUrl(data.avatar_url)
+        setMotoModel(data.moto_model)
+        setMotoYear(data.moto_year)
+        setMotoSpec(data.moto_spec)
       }
     } catch (error) {
       alert('Error loading user data!')
@@ -40,15 +42,15 @@ export default function Account({ session }) {
     }
   }
 
-  async function updateProfile({ username, website, avatar_url }) {
+  async function updateProfile({ motoModel, motoYear, motoSpec }) {
     try {
       setLoading(true)
 
       const updates = {
         id: user.id,
-        username,
-        website,
-        avatar_url,
+        moto_model: motoModel,
+        moto_year: motoYear,
+        moto_spec: motoSpec,
         updated_at: new Date().toISOString(),
       }
 
@@ -70,36 +72,48 @@ export default function Account({ session }) {
         <input id="email" type="text" value={session.user.email} disabled />
       </div>
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="motoModel">Moto Model</label>
         <input
-          id="username"
+          id="motoModel"
           type="text"
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
+          value={motoModel || ''}
+          onChange={(e) => setMotoModel(e.target.value)}
         />
       </div>
       <div>
-        <label htmlFor="website">Website</label>
+        <label htmlFor="motoYear">Moto Year</label>
         <input
-          id="website"
-          type="website"
-          value={website || ''}
-          onChange={(e) => setWebsite(e.target.value)}
+          id="motoYear"
+          type="text"
+          value={motoYear || ''}
+          onChange={(e) => setMotoYear(e.target.value)}
+        />
+      </div>
+      <div>
+        <label htmlFor="motoSpec">Moto Spec</label>
+        <input
+          id="motoSpec"
+          type="text"
+          value={motoSpec || ''}
+          onChange={(e) => setMotoSpec(e.target.value)}
         />
       </div>
 
       <div>
         <button
           className="button primary block"
-          onClick={() => updateProfile({ username, website, avatar_url })}
+          onClick={() => updateProfile({ motoModel, motoYear, motoSpec })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
         </button>
       </div>
 
+
       <div>
-        <button className="button block" onClick={() => supabase.auth.signOut()}>
+        <button className="button block" onClick={() =>    {
+          supabase.auth.signOut()
+          router.push('/')}}>
           Sign Out
         </button>
       </div>
