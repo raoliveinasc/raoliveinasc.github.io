@@ -4,7 +4,10 @@ import { useRouter } from 'next/router'
 
 export default function Account({ session }) {
   const supabase = useSupabaseClient()
-  const user = useUser()
+  let user;
+  if (useUser() !== null) {
+    user = useUser();
+  }
   const [loading, setLoading] = useState(true)
   const [motoModel, setMotoModel] = useState(null)
   const [motoYear, setMotoYear] = useState(null)
