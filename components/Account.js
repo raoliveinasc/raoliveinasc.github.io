@@ -10,6 +10,7 @@ export default function Account({ session }) {
   const [motoYear, setMotoYear] = useState(null)
   const [motoSpec, setMotoSpec] = useState(null)
   const router = useRouter()
+  
 
   useEffect(() => {
     getProfile()
