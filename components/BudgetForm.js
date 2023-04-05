@@ -66,7 +66,7 @@ export default function BudgetForm() {
             </div>
             <form className="budget-form-main">
             <div className="login-surround"><Login/></div>
-                <SelectMotos/>
+                <SelectMotos edit={true}/>
                 <div className="app">
                     <h2>Serviços Oferecidos</h2>
                     <div className="dropdown-container">

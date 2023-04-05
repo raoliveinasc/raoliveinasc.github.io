@@ -1124,7 +1124,7 @@ main {
 }
 
 .budget-form-center {
-  height: 120vh;
+  height: auto;
   margin-top: -10vh;
   background-color: white;
   width: 90%;
@@ -1504,7 +1504,7 @@ input:focus ~ label, input:valid ~ label {
 }
 
 .agendamento-form-center {
-  height: 120vh;
+  height: auto;
   margin-top: -10vh;
   background-color: white;
   width: 90%;
@@ -1841,6 +1841,7 @@ input:focus ~ label, input:valid ~ label {
   gap: 20px;
   margin: 10px 0px;
   transition: 200ms ease-in-out;
+  text-decoration: none;
 }
 
 

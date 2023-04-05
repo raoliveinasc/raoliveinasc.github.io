@@ -45,8 +45,10 @@ export default function MyOttomotos() {
         throw error
       }
 
-      if (data) {
+      if (data && data.person_name != null) {
         setPersonNameCondition(data.person_name)
+      } else if (data.person_name == null) {
+        setPersonNameCondition("Motoqueiro")
       }
     } catch (error) {
       console.log('Error loading user data!')

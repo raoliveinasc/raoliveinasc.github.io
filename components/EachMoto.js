@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 export default function EachMoto(props) {
@@ -17,7 +18,7 @@ export default function EachMoto(props) {
           <button className="remove-moto-button" type="button"><i className="fa-solid fa-x fa-lg"></i></button>
         </div> : 
         <div className="remove-moto">
-          <button className="remove-moto-button" type="button"><i class="fa-solid fa-pen-to-square fa-2x"></i></button>
+          <Link className="remove-moto-button" href="/profile"><i class="fa-solid fa-pen-to-square fa-2x"></i></Link>
         </div>}
       </div>
       </>

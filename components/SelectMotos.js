@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import EachMoto from "./EachMoto"
+import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
 
 const data = {
     "agrale": {
@@ -10003,13 +10004,15 @@ const data = {
     }
   }
 
-export default function SelectMotos() {
+export default function SelectMotos({ firstMotoModel, firstMotoSpec, firstMotoYear, edit }) {
   const [models, setModels] = useState([]);
   const [selectedModel, setSelectedModel] = useState('');
   const [specs, setSpecs] = useState([]);
   const [selectedSpec, setSelectedSpec] = useState('');
   const [years, setYears] = useState([]);
   const [selectedYear, setSelectedYear] = useState('');
+  const supabase = useSupabaseClient()
+  const user = useUser()
 
   useEffect(() => {
     setModels(Object.keys(data));
@@ -10050,7 +10053,7 @@ export default function SelectMotos() {
   async function updateProfileMotos({ selectedModel, selectedYear, selectedSpec }) {
     try {
       const updates = {
-        id: recentUser(),
+        id: user.id,
         moto_model: selectedModel.charAt(0).toUpperCase() + selectedModel.slice(1),
         moto_year: selectedYear,
         moto_spec: selectedSpec,
@@ -10070,7 +10073,7 @@ export default function SelectMotos() {
   return (
     <>
     <h2>Motos Cadastradas</h2>
-    <div className='select-dropdown'>
+    {!edit ?     <><div className='select-dropdown'>
       <label htmlFor="model-select">Selecione a marca:</label>
       <select id="model-select" value={selectedModel} onChange={handleModelChange} className="select-dropdown-s">
         <option value="">-- Marca --</option>
@@ -10102,9 +10105,11 @@ export default function SelectMotos() {
       </select>
     </div>
     <div className="insert-moto">
-        <EachMoto nomeMoto={selectedModel.charAt(0).toUpperCase() + selectedModel.slice(1)} especMoto={selectedSpec} anoMoto={selectedYear} edit={true}/>
-      <button className="agendar-oo minimal" onClick={() => updateProfile({ selectedModel, selectedYear, selectedSpec })}>CONFIRMAR MOTO</button>
-    </div>
+        <EachMoto nomeMoto={selectedModel != '' ? selectedModel.charAt(0).toUpperCase() + selectedModel.slice(1) : firstMotoModel} especMoto={selectedSpec != '' ? selectedSpec : firstMotoSpec} anoMoto={selectedYear != '' ? selectedYear : firstMotoYear} edit={edit}/>
+      <button className="agendar-oo minimal" onClick={() => updateProfileMotos({ selectedModel, selectedYear, selectedSpec })}>CONFIRMAR MOTO</button>
+    </div></> : <><div className='select-dropdown'></div>    <div className="insert-moto">
+        <EachMoto nomeMoto={firstMotoModel} especMoto={firstMotoSpec} anoMoto={firstMotoYear} edit={edit}/>
+    </div></>}
     </>
   );
 }

@@ -130,7 +130,7 @@ export default function Account({ session }) {
         <label htmlFor="email">Email</label>
         <input id="email" type="text" value={session ? session.user.email : "Email padrão"} disabled />
       </div>
-      <div className='label-account'>
+      {/* <div className='label-account'>
         <label htmlFor="motoModel">Moto Model</label>
         <input
           id="motoModel"
@@ -156,9 +156,9 @@ export default function Account({ session }) {
           value={motoSpec || ''}
           onChange={(e) => setMotoSpec(e.target.value)}
         />
-      </div>
+      </div> */}
       <div className='select-motos-account'>
-      <SelectMotos/>
+      <SelectMotos firstMotoModel={motoModel} firstMotoSpec={motoSpec} firstMotoYear={motoYear} edit={false}/>
       </div>
 
       <div>
