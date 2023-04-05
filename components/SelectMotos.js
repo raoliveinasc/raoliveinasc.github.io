@@ -10047,6 +10047,25 @@ export default function SelectMotos() {
     setSelectedYear(e.target.value);
   };
 
+  async function updateProfileMotos({ selectedModel, selectedYear, selectedSpec }) {
+    try {
+      const updates = {
+        id: recentUser(),
+        moto_model: selectedModel.charAt(0).toUpperCase() + selectedModel.slice(1),
+        moto_year: selectedYear,
+        moto_spec: selectedSpec,
+        updated_at: new Date().toISOString()
+      }
+
+      let { error } = await supabase.from('profiles').upsert(updates)
+      if (error) throw error
+      alert('Perfil atualizado com sucesso!')
+    } catch (error) {
+      alert('Erro ao atualizar perfil.')
+      console.log(error)
+    } 
+  }
+
 
   return (
     <>
@@ -10083,8 +10102,8 @@ export default function SelectMotos() {
       </select>
     </div>
     <div className="insert-moto">
-        <EachMoto nomeMoto={selectedModel.charAt(0).toUpperCase() + selectedModel.slice(1)} especMoto={selectedSpec} anoMoto={selectedYear}/>
-    <button className="inserir-nova-moto">CONFIRMAR MOTO</button>
+        <EachMoto nomeMoto={selectedModel.charAt(0).toUpperCase() + selectedModel.slice(1)} especMoto={selectedSpec} anoMoto={selectedYear} edit={true}/>
+      <button className="agendar-oo minimal" onClick={() => updateProfile({ selectedModel, selectedYear, selectedSpec })}>CONFIRMAR MOTO</button>
     </div>
     </>
   );

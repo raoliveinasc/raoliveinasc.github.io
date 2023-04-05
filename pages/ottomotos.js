@@ -3,13 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Montserrat } from 'next/font/google'
 import Header from '@/components/Header'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Footer from '@/components/Footer'
 import UserScore from '@/components/UserScore'
 import ActiveOrders from '@/components/ActiveOrders'
 import Rewards from '@/components/Rewards'
 import OldOrders from '@/components/OldOrders'
-import { useUser } from "@supabase/auth-helpers-react"
+import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react"
 
 
 const montserrat = Montserrat({
@@ -26,12 +27,33 @@ function getFormattedDate() {
 }
 
 
-
 export default function MyOttomotos() {
-
   const router = useRouter()
   const user = useUser()
+  const supabase = useSupabaseClient()
+  const [personNameCondition, setPersonNameCondition] = useState('')
 
+  async function NameConditioned() {
+    try {
+      let { data, error, status } = await supabase
+        .from('profiles')
+        .select(`person_name`)
+        .eq('id', user.id)
+        .single()
+
+      if (error && status !== 406) {
+        throw error
+      }
+
+      if (data) {
+        setPersonNameCondition(data.person_name)
+      }
+    } catch (error) {
+      console.log('Error loading user data!')
+      console.log(error)
+    }
+  }
+  NameConditioned()
   return (
     <>
       <Head>
@@ -43,12 +65,14 @@ export default function MyOttomotos() {
         <div className='dashboard-surround'>
             <div className='dashboard-internal'>
             <div className='dashboard-header'>
-                <div className='user-hello-dashboard'>Olá, {user ? user.id : "Raifran"}</div>
-                <div className='dashboard-date-constant'>{getFormattedDate()}</div>
-                <Link href="/profile" className='settings-button'>
-                  Configurações
-                  <i class="fa-solid fa-gear fa-lg"></i>
-                </Link>
+                <div className='user-hello-dashboard'>Olá, {user ? personNameCondition : "Raifran"}</div>
+                <div className='dashboard-top-inline'>
+                  <div className='dashboard-date-constant'>{getFormattedDate()}</div>
+                  <Link href="/profile" className='settings-button'>
+                    Configurações
+                    <i class="fa-solid fa-gear fa-lg"></i>
+                  </Link>
+                </div>
             </div>
             <div className='dashboard-sections'>
                 <div className='prior-section-dashboard'>

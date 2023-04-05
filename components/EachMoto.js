@@ -13,9 +13,12 @@ export default function EachMoto(props) {
             <div className="ano-moto">{props.anoMoto ? props.anoMoto : "Selecione o Ano"}</div>
           </div>
         </div>
-        <div className="remove-moto">
+        {!props.edit ?     <div className="remove-moto">
           <button className="remove-moto-button" type="button"><i className="fa-solid fa-x fa-lg"></i></button>
-        </div>
+        </div> : 
+        <div className="remove-moto">
+          <button className="remove-moto-button" type="button"><i class="fa-solid fa-pen-to-square fa-2x"></i></button>
+        </div>}
       </div>
       </>
   );

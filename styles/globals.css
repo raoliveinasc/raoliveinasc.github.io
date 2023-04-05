@@ -1891,7 +1891,7 @@ input:focus ~ label, input:valid ~ label {
   transition: 200ms ease-in-out;
 }
 
-.basic-information-section, .insert-moto {
+.basic-information-section {
   border-bottom: 1px solid rgb(232, 232, 232);
   padding-bottom: 15px;
 }
@@ -1899,6 +1899,9 @@ input:focus ~ label, input:valid ~ label {
 .insert-moto {
   display: flex;
   flex-direction: column;
+  width: 70%;
+  margin: 20px auto;
+  gap: 20px;
 }
 
 .basic-information-internal {
@@ -1994,17 +1997,20 @@ input:focus ~ label, input:valid ~ label {
   -moz-appearance: none;
   appearance: none;
   margin: 1f0px 5px 15px 0px;
-  width: 25%;
+  width: 95%;
 }
 
 .select-dropdown {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  width: 70%;
 }
 
 .select-dropdown label {
   margin: 10px 20px;
+  width: 100%;
 }
 
 .login-surround {
@@ -2238,10 +2244,10 @@ input:focus ~ label, input:valid ~ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0px 10px 0px -70px;
   background-color: white;
   border: 0px;
   border-radius: 5px;
+  margin-right: 10px;
   cursor: pointer;
   transition: 200ms ease-in-out;
   text-decoration: none;
@@ -2251,4 +2257,102 @@ input:focus ~ label, input:valid ~ label {
 .settings-button:hover{ 
   background-color: rgb(234, 233, 233);
   transition: 200ms ease-in-out;
+}
+
+.dashboard-top-inline {
+  display: flex;
+}
+
+.form-widget-display {
+  background-color: white;
+  padding: 40px 20px 80px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 900px;
+  margin: 200px auto 400px;
+}
+
+.select-motos-account {
+  width: 85%;
+  padding: 10px;
+  margin: 20px auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(242, 240, 240);
+}
+
+.profile-pic-display-account {
+  margin-top: -100px;
+  width: auto;
+  border-radius: 50%;
+  background-color: white;
+  aspect-ratio: 1;
+  padding: 5px;
+}
+
+.profile-pic-display-account svg {
+  height: 120px;
+  width: 120px;
+}
+
+.label-account {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-bottom: 10px;
+}
+
+.label-account input {
+  display: block;
+  width: 95%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-top: 10px;
+}
+
+.title-account-mg {
+  width: 90%;
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto 30px;
+}
+
+.actual-title-mg {
+  padding: 10px;
+}
+
+.enlarged {
+  padding: 5px 10px!important;
+  font-size: 1rem;
+  margin: 0px !important;
+}
+
+.config {
+  border: 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px auto !important;
+}
+
+.minimal {
+  width: 200px !important;
+  cursor: pointer;
+  margin-right: 0px;
 }
