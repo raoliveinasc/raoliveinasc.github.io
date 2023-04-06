@@ -34,25 +34,31 @@ export default function MyOttomotos() {
   const [personNameCondition, setPersonNameCondition] = useState('')
 
   async function NameConditioned() {
-    try {
-      let { data, error, status } = await supabase
-        .from('profiles')
-        .select(`person_name`)
-        .eq('id', user.id)
-        .single()
-
-      if (error && status !== 406) {
-        throw error
+    if (sessionStorage.getItem("person_name") && personNameCondition != sessionStorage.getItem("person_name")) {
+      setPersonNameCondition(sessionStorage.getItem("person_name"))
+    } else {
+      try {
+        let { data, error, status } = await supabase
+          .from('profiles')
+          .select(`person_name`)
+          .eq('id', user.id)
+          .single()
+  
+        if (error && status !== 406) {
+          throw error
+        }
+  
+        if (data && data.person_name != null && personNameCondition != data.person_name) {
+          sessionStorage.setItem("person_name", data.person_name)
+          setPersonNameCondition(data.person_name)
+        } else if (data.person_name == null) {
+          sessionStorage.setItem("person_name", "Motoqueiro")
+          setPersonNameCondition("Motoqueiro")
+        }
+      } catch (error) {
+        console.log('Error loading user data!')
+        console.log(error)
       }
-
-      if (data && data.person_name != null) {
-        setPersonNameCondition(data.person_name)
-      } else if (data.person_name == null) {
-        setPersonNameCondition("Motoqueiro")
-      }
-    } catch (error) {
-      console.log('Error loading user data!')
-      console.log(error)
     }
   }
   NameConditioned()
@@ -67,7 +73,7 @@ export default function MyOttomotos() {
         <div className='dashboard-surround'>
             <div className='dashboard-internal'>
             <div className='dashboard-header'>
-                <div className='user-hello-dashboard'>Olá, {user ? personNameCondition : "Raifran"}</div>
+                <div className='user-hello-dashboard'>Olá, {user ? personNameCondition : "Motoqueiro"}</div>
                 <div className='dashboard-top-inline'>
                   <div className='dashboard-date-constant'>{getFormattedDate()}</div>
                   <Link href="/profile" className='settings-button'>
@@ -76,6 +82,13 @@ export default function MyOttomotos() {
                   </Link>
                 </div>
             </div>
+            {personNameCondition == "Motoqueiro" ?             
+              <div className='dashboard-header notifying'>
+                  <div className='dashboard-date-constant'>
+                  Para ter acesso a todas as functionalidades, finalize o seu cadastro em Configurações.
+                  </div>
+              </div> : null
+            }
             <div className='dashboard-sections'>
                 <div className='prior-section-dashboard'>
                     <UserScore />

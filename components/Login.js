@@ -10,25 +10,33 @@ export default function Login({ status }) {
   const [personNameCondition, setPersonNameCondition] = useState('')
 
   async function NameConditioned() {
-    try {
-      let { data, error, status } = await supabase
-        .from('profiles')
-        .select(`person_name`)
-        .eq('id', user.id)
-        .single()
-
-      if (error && status !== 406) {
-        throw error
+    if (sessionStorage.getItem("person_name") && personNameCondition != sessionStorage.getItem("person_name")) {
+      setPersonNameCondition(sessionStorage.getItem("person_name"))
+      // console.log(sessionStorage.getItem("person_name"))
+    } else {
+      console.log(sessionStorage.getItem("person_name"))
+      try {
+        let { data, error, status } = await supabase
+          .from('profiles')
+          .select(`person_name`)
+          .eq('id', user.id)
+          .single()
+  
+        if (error && status !== 406) {
+          throw error
+        }
+  
+        if (data && data.person_name != null && personNameCondition != data.person_name) {
+          sessionStorage.setItem("person_name", JSON.stringify(data.person_name))
+          setPersonNameCondition(data.person_name)
+        } else if (data.person_name == null) {
+          sessionStorage.setItem("person_name", "Motoqueiro")
+          setPersonNameCondition("Motoqueiro")
+        }
+      } catch (error) {
+        console.log('Error loading user data!')
+        console.log(error)
       }
-
-      if (data && data.person_name != null) {
-        setPersonNameCondition(data.person_name)
-      } else if (data.person_name == null) {
-        setPersonNameCondition("Motoqueiro")
-      }
-    } catch (error) {
-      console.log('Error loading user data!')
-      console.log(error)
     }
   }
   NameConditioned()

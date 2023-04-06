@@ -2274,7 +2274,7 @@ input:focus ~ label, input:valid ~ label {
   justify-content: center;
   width: 90%;
   max-width: 900px;
-  margin: 200px auto 400px;
+  margin: 120px auto 400px;
 }
 
 .select-motos-account {
@@ -2356,4 +2356,15 @@ input:focus ~ label, input:valid ~ label {
   width: 200px !important;
   cursor: pointer;
   margin-right: 0px;
+}
+
+.notifying {
+  border-top: 1px solid rgb(255, 105, 0);
+  width: 99.5%;
+}
+
+.notifying div {
+  padding-top: 5px !important;
+  padding-bottom: 7px !important;
+  color: rgb(255, 105, 0);
 }
