@@ -123,7 +123,9 @@ export default function Account({ session }) {
         <div className='actual-title-mg'>Configurações de Perfil</div>
         <button className="remove-moto-button enlarged" onClick={() =>    {
           supabase.auth.signOut()
-          router.push('/')}}>
+          router.push('/')
+          toast.success("Fora da conta com sucesso", {position: "top-right"})
+          }}>
           Sair da Conta
         </button>
       </div>

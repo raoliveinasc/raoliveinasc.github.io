@@ -9,6 +9,7 @@ import RequestBudget from '@/components/RequestBudget'
 import WhyOtto from '@/components/WhyOtto'
 import Footer from '@/components/Footer'
 import AccordionOtto from '@/components/AccordionOtto'
+import { Toaster } from 'react-hot-toast'
 
 
 const montserrat = Montserrat({
@@ -33,6 +34,7 @@ export default function Home() {
             <div className='main-subtitle'>Uma nova forma de prover serviços.</div>
             <Trace color="orange"/>
           </div>
+          <Toaster/>
           <Slideshow/>
           <Services/>
           <RequestBudget/>
