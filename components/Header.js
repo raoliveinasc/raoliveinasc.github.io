@@ -5,6 +5,9 @@ import Login from './Login'
 import logo from "../public/main-logo.jpg"
 import { useRouter } from 'next/router'
 import { Montserrat } from 'next/font/google'
+import { slide as Menu } from 'react-burger-menu'
+import BurgerMenu from './BurgerMenu'
+
 
 
 const montserrat = Montserrat({
@@ -65,6 +68,7 @@ export default function Header({pathnamed}) {
                 <div className='header-contacts'>Ligue Agora | TEL: +55 21 90000-0000</div>
                 <Login/>
             </div>
+            <BurgerMenu/>
             </div>
         </div>
         <div className='external-header'>

@@ -6,6 +6,7 @@
 body {
   padding: 0px;
   margin: 0px;
+  overflow-x: hidden;
 }
 
 .header {
@@ -111,7 +112,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: 6px;
 }
 
 .bottom-header {
@@ -495,7 +496,6 @@ main {
   display: flex;
   align-items: center;
   background-color: white;
-  flex-direction: row;
 }
 
 .rb-image {
@@ -650,11 +650,8 @@ main {
 .wos {
   width: 85%;
   max-width: 1300px;
-  padding: 80px 0px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: auto;
+  padding: 80px 0px 20px;
 }
 
 .each-wo {
@@ -663,6 +660,18 @@ main {
   justify-content: center;
   flex-direction: column;
   width: calc(100%/5);
+  border-radius: 5px;
+  background-color: white;
+  padding: 30px 0px 20px;
+  height: auto;
+}
+
+.wos-surround {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
 }
 
 .wo-text {
@@ -684,8 +693,18 @@ main {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 0px 0px 0px 20px;
+  padding: 0px 0px 0px 10px;
   margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.wo-subtext li {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 10px 0px;
+  color: rgb(145, 145, 145);
 }
 
 .dashboard-surround {
@@ -2367,4 +2386,309 @@ input:focus ~ label, input:valid ~ label {
   padding-top: 5px !important;
   padding-bottom: 7px !important;
   color: rgb(255, 105, 0);
+}
+
+.burger-menu {
+  position: relative;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 300px;
+  background-color: #f0f0f0;
+  width: 300px;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 6px 12px rgba(107, 82, 82, 0.3);
+  background-color: white;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  transition: ease-in-out 0.3s all;
+  z-index: 5;
+}
+
+.opened {
+  right: 0px !important;
+}
+
+.not-opened {
+  right: -300px !important;
+}
+
+.burger-button-menu {
+  background-color: transparent;
+  color: white;
+  border: 0px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.burger-button-menu:hover {
+  color: rgb(228, 228, 228);
+}
+
+.body-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+
+.access-sidebar {
+  padding: 20px 20px 10px;
+  border-top: 1px solid rgb(255, 105, 0);
+  margin-top: 10px;
+}
+
+.access-sidebar a {
+  color: black;
+  text-decoration: none;
+}
+
+.access-sidebar a:hover {
+  color: rgba(0, 0, 0, 0.751);
+}
+
+.login-section-sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 0px 10px;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 400px) {
+  .request-budget {
+    flex-direction: column-reverse;
+  }
+
+  .rb-image {
+    width: 100%;
+    margin-bottom: -80px;
+  }
+
+  .rb-context {
+    padding: 40px;
+    height: 150px;
+  }
+
+  .wos-surround {
+    flex-direction: column;
+  }
+
+  .each-wo {
+    width: 80%;
+    padding-top: 35px;
+  }
+
+  .each-wo img {
+    height: 140px;
+    width: 140px;
+  }
+
+  .why-otto-title, .services-title {
+    padding: 0px 20px;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .services-list {
+    flex-direction: column;
+  }
+
+  .secondary-header {
+    display: none;
+  }
+
+  .wo-title {
+    font-size: 1.4rem;
+  }
+
+  .wo-subtext {
+    font-size: 1.3rem;
+  }
+
+  .wo-text {
+    height: auto;
+  }
+  .external-header {
+    display: none;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .main-subtitle {
+    font-size: 1.2rem;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .react-slideshow-container {
+    display: none !important;
+  }
+
+  .indicators {
+    visibility: hidden;
+  }
+
+  .wo-subtext div{
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  .wo-subtext {
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 720px) {
+  .request-budget {
+    flex-direction: column-reverse;
+  }
+
+  .rb-image {
+    width: 100%;
+    margin-bottom: -80px;
+  }
+
+  .rb-context {
+    padding: 40px;
+    height: 150px;
+  }
+
+  .wos-surround {
+    flex-direction: column;
+  }
+
+  .each-wo {
+    width: 80%;
+    padding-top: 35px;
+  }
+
+  .each-wo img {
+    height: 140px;
+    width: 140px;
+  }
+
+  .wo-title {
+    font-size: 1.4rem;
+  }
+
+  .wo-subtext {
+    font-size: 1.3rem;
+    width: 70%;
+    gap: 5px;
+    margin-top: 10px;
+  }
+
+  .why-otto-title, .services-title {
+    padding: 0px 20px;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  .services-list {
+    flex-direction: column;
+  }
+
+  .secondary-header {
+    display: none;
+  }
+
+  .wo-text {
+    height: auto;
+  }
+
+  .external-header {
+    display: none;
+  }
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .main-subtitle {
+    font-size: 1.3rem;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: auto;
+    text-align: center;
+  }
+
+  .react-slideshow-container {
+    display: none !important;
+  }
+
+  .indicators {
+    visibility: hidden;
+  }
+
+  .wo-subtext div{
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  .wo-subtext {
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 721px) and (max-width: 1280px) {
+  .request-budget {
+    flex-direction: column-reverse;
+  }
+
+  .rb-image {
+    width: 100%;
+  }
+
+  .rb-context {
+    padding: 40px;
+    height: 150px;
+  }
+
+  .services-list {
+    flex-direction: column;
+  }
+
+  .wos-surround {
+    flex-direction: column;
+  }
+
+  .wo-text {
+    height: auto;
+  }
+  .each-wo {
+    width: 40%;
+  }
+  .why-otto-title {
+    padding: 0px 20px;
+    text-align: center;
+  }
+
+  .burger-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .request-budget {
+  flex-direction: row;
+  }
+
+  .burger-menu {
+    display: none;
+  }
 }
