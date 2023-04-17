@@ -32,7 +32,7 @@ export default function BurgerMenu() {
                 <Link href="/services">Serviços</Link>
             </div>
             <div className='access-sidebar'>
-                <Link href="/services">Empresa</Link>
+                <Link href="/company">Empresa</Link>
             </div>
         </div>
         {isSidebarOpen ? (<div className='body-overlay' onClick={handleSidebarOpen}></div>) : null}

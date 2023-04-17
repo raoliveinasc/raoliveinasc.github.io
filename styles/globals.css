@@ -548,9 +548,15 @@ main {
   margin: 20px;
 }
 
+.contact-item-text {
+  color: #959595;
+  text-decoration: none;
+}
+
 .footer-surround {
   background-color: #202020;
   color: #959595;
+  text-decoration: none;
   width: 100%;
   display: flex;
   align-items: center;
@@ -611,7 +617,25 @@ main {
 }
 
 .map-section {
-  margin: 40px 0px;
+  margin: 40px 0px 70px;
+}
+
+.map-section {
+  padding-bottom:56.25%;
+  position:relative;
+  height:250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.map-section iframe{
+  left:0;
+  top:0;
+  transform: translateX(-50%);
+  height: 250px;
+  width:90vw;
+  position:absolute;
+  margin: 0px;
 }
 
 .bottom-footer {
@@ -679,8 +703,9 @@ main {
   align-items: center;
   flex-direction: column;
   width: 80%;
+  gap: 10px;
   margin-top: 25px;
-  height: 160px;
+  height: 110px;
 }
 
 .wo-title {
@@ -709,13 +734,15 @@ main {
 
 .dashboard-surround {
   width: 100vw;
-  height: 135vh;
+  min-height: 135vh;
+  height: auto;
   background-color: rgb(242, 240, 240);
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   padding-top: 22px;
+  padding-bottom: 100px;
 }
 
 .dashboard-item {
@@ -1135,7 +1162,7 @@ main {
 
 .budget-form-section {
   width: 100vw;
-  min-height: 110vh;
+  /* min-height: 110vh; */
   background-color: #ff6900;
   display: flex;
   align-items: center;
@@ -1515,7 +1542,7 @@ input:focus ~ label, input:valid ~ label {
 
 .agendamento-form-section {
   width: 100vw;
-  min-height: 110vh;
+  /* min-height: 110vh; */
   background-color: rgb(47, 46, 46);
   display: flex;
   align-items: center;
@@ -1552,7 +1579,7 @@ input:focus ~ label, input:valid ~ label {
 }
 
 .agendamento-form-main {
-  margin: 10px;
+  margin: 20px 10px 50px;
   border-top: 1px solid rgb(232, 232, 232);
   padding-top: 15px;
 }
@@ -1920,7 +1947,7 @@ input:focus ~ label, input:valid ~ label {
   display: flex;
   flex-direction: column;
   width: 70%;
-  margin: 20px auto;
+  margin: 0px auto 20px auto;
   gap: 20px;
 }
 
@@ -2025,7 +2052,10 @@ input:focus ~ label, input:valid ~ label {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 70%;
+  width: 75%;
+  margin: auto;
+  gap: 3px;
+  margin-bottom: 25px;
 }
 
 .select-dropdown label {
@@ -2390,6 +2420,7 @@ input:focus ~ label, input:valid ~ label {
 
 .burger-menu {
   position: relative;
+  margin-right: -10px;
 }
 
 .sidebar {
@@ -2426,6 +2457,7 @@ input:focus ~ label, input:valid ~ label {
   font-size: 1.2rem;
   margin-top: 15px;
 }
+
 
 .burger-button-menu:hover {
   color: rgb(228, 228, 228);
@@ -2476,6 +2508,15 @@ input:focus ~ label, input:valid ~ label {
     margin-bottom: -80px;
   }
 
+
+  .header {
+    margin-top: -20px;
+  }
+
+  main {
+    padding-top: 120px;
+  }
+
   .rb-context {
     padding: 40px;
     height: 150px;
@@ -2493,6 +2534,13 @@ input:focus ~ label, input:valid ~ label {
   .each-wo img {
     height: 140px;
     width: 140px;
+  }
+
+  .footer-title, .service-cta {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font-size: 2.3rem;
   }
 
   .why-otto-title, .services-title {
@@ -2552,11 +2600,178 @@ input:focus ~ label, input:valid ~ label {
   .wo-subtext {
     padding-bottom: 10px;
   }
+
+  .budget-form-center, .agendamento-form-center {
+    width: 94%;
+  }
+
+  .budget-form-title, .agendamento-form-title {
+    font-size: 2.5rem;
+  }
+
+  .budget-text, .agendamento-text, .services-text {
+    font-size: 3.4rem;
+  }
+
+  .budget-form-subtitle, .agendamento-form-subtitle, .services-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .budget-subtitle, .agendamento-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .select-dropdown {
+    width: 95%;
+  }
+
+  .insert-moto {
+    width: 95%;
+    margin-left: 0px;
+  }
+
+  .fa-motorcycle-one {
+    display: none;
+  }
+
+  .remove-moto {
+    margin-right: -10px;
+  }
+
+  .service-filler {
+    display: none;
+  }
+
+  .servicelist-display {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .service-column {
+    width: 85%;
+  }
+
+  .company-attribute {
+    width: 80%;
+    margin-left: -7px;
+  }
+
+  .company-insider {
+    margin-left: -7px;
+  }
+
+  .company-pilars {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  .company-pilar {
+    width: 78%;
+  }
+
+  .pilar-writing {
+    font-weight: 400;
+    font-size: 1.1rem
+  }
+
+  .dashboard-sections {
+    flex-direction: column;
+  }
+
+  .prior-section-dashboard, .extent-section-dashboard {
+    width: 100%;
+  }
+
+  .dashboard-date-constant {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 401px) and (max-width: 720px) {
   .request-budget {
     flex-direction: column-reverse;
+  }
+
+  .prior-section-dashboard, .extent-section-dashboard {
+    width: 100%;
+  }
+
+  .dashboard-date-constant {
+    display: none;
+  }
+
+  .dashboard-sections {
+    flex-direction: column;
+  }
+
+  .company-attribute {
+    width: 80%;
+    margin-left: -7px;
+  }
+
+  .pilar-writing {
+    font-weight: 400;
+    font-size: 1.2rem
+  }
+
+  .company-pilars {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  .company-pilar {
+    width: 78%;
+  }
+
+  .company-insider {
+    margin-left: -7px;
+  }
+
+  .servicelist-display {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .service-column {
+    width: 85%;
+  }
+
+  .service-filler {
+    display: none;
+  }
+
+  .budget-form-center, .agendamento-form-center {
+    width: 94%;
+    padding: 20px 25px;
+  }
+  .budget-form-title, .agendamento-form-title {
+    font-size: 2.5rem;
+  }
+
+  .fa-motorcycle-one {
+    display: none;
+  }
+
+
+  .select-dropdown {
+    width: 95%;
+  }
+
+  .insert-moto {
+    width: 95%;
+    margin-left: 0px;
+  }
+
+  .budget-text, .agendamento-text, .services-text {
+    font-size: 3.4rem;
+  }
+
+  .budget-subtitle, .agendamento-subtitle, .services-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .budget-form-subtitle, .agendamento-form-subtitle {
+    font-size: 1.2rem;
   }
 
   .rb-image {
@@ -2592,6 +2807,13 @@ input:focus ~ label, input:valid ~ label {
     width: 70%;
     gap: 5px;
     margin-top: 10px;
+  }
+
+  .footer-title, .service-cta {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font-size: 2.3rem;
   }
 
   .why-otto-title, .services-title {
@@ -2642,6 +2864,23 @@ input:focus ~ label, input:valid ~ label {
 
   .wo-subtext {
     padding-bottom: 10px;
+  }
+
+  .why-otto-top {
+    padding-top: 20px;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .header {
+    margin-top: -20px;
+  }
+
+  main {
+    padding-top: 120px;
   }
 }
 
