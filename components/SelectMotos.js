@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import EachMoto from "./EachMoto"
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
-
+import toast, { Toaster } from 'react-hot-toast'
 const data = {
     "agrale": {
       "CITY-50": {
@@ -10062,9 +10062,9 @@ export default function SelectMotos({ firstMotoModel, firstMotoSpec, firstMotoYe
 
       let { error } = await supabase.from('profiles').upsert(updates)
       if (error) throw error
-      alert('Perfil atualizado com sucesso!')
+      toast.success('Perfil atualizado com sucesso!')
     } catch (error) {
-      alert('Erro ao atualizar perfil.')
+      toast.error('Erro ao atualizar perfil.')
       console.log(error)
     } 
   }
@@ -10072,6 +10072,7 @@ export default function SelectMotos({ firstMotoModel, firstMotoSpec, firstMotoYe
 
   return (
     <>
+    <Toaster/>
     <h2>Motos Cadastradas</h2>
     {!edit ?     <><div className='select-dropdown'>
       <label htmlFor="model-select">Selecione a marca:</label>
