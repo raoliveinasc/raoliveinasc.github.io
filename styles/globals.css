@@ -2950,11 +2950,13 @@ input:focus ~ label, input:valid ~ label {
   width: auto;
   margin-top: -200px;
   margin-left: -100px;
+  padding: 0px 20px;
 }
 
 .welcome-title {
   font-size: 2rem;
   color: black;
+  padding: 0px 20px;
 }
 
 .welcome-button {
