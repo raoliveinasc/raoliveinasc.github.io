@@ -2931,3 +2931,36 @@ input:focus ~ label, input:valid ~ label {
     display: none;
   }
 }
+
+.landing-page-otto {
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  flex-direction: column;
+  padding: 150px 0px;
+  margin-top: -120px;
+}
+
+.landing-page-otto img {
+  height: 500px;
+  width: auto;
+  margin-top: -200px;
+  margin-left: -100px;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  color: black;
+}
+
+.welcome-button {
+  border: 0px;
+  background-color: transparent;
+  text-decoration: underline;
+  color: gray;
+  font-size: 1.2rem;
+}
