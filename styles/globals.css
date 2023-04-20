@@ -2970,6 +2970,7 @@ input:focus ~ label, input:valid ~ label {
    padding: 20px 50px 40px 50px;
    border-radius: 8px;
    margin-right: 30px;
+   margin-bottom: 100px;
 }
 
 .welcome-button {

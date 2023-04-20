@@ -58,8 +58,8 @@ export default function Login() {
                                   "confirmation_text": "Confira seu email inserido pelo link de confirmação"
                                 },
                                 "sign_in": {
-                                  "email_label": "Endereço de Email",
-                                  "password_label": "Crie uma senha",
+                                  "email_label": "Endereço de Email Cadastrado",
+                                  "password_label": "Digite sua senha",
                                   "email_input_placeholder": "Seu email",
                                   "password_input_placeholder": "Sua senha",
                                   "button_label": "Entrar",
