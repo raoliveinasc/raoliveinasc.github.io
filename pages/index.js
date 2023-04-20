@@ -57,8 +57,14 @@ export default function Home() {
         <main className={montserrat.className}>
           <div className='landing-page-otto'>
             <div className='welcome-title'>
-              <h1>Site em construção...</h1>
+              <h1>Aguarde estamos chegando!</h1>
+              <h2>Site em construção...</h2>
+              <h3>Uma nova forma de prover serviços está por vir.</h3>
               <Image src={logoLeading}/>
+            </div>
+            <div className='explanation-landing'>
+              <h1>Quem somos?</h1>
+              <div>A OttoMotos é uma startup na área de serviços focada em reparos rápidos de motocicletas visando prover serviços com Credibilidade de forma Transparente, Diferenciada e Conveniente. </div>
             </div>
             <button onClick={toggleContent} className='welcome-button'>Acessar mesmo assim</button>
           </div>
