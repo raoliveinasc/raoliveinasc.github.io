@@ -50,7 +50,7 @@ export default function Company() {
                     <div className='company-pilar'>
                         <div className='company-pilar-image'>
                             <div className='company-pilar-inside'>
-                                <i class="fa-regular fa-tower-observation fa-2x"></i>
+                                <i class="fa-solid fa-tower-observation fa-2x"></i>
                             </div>
                             <div className='company-pilar-text'>
                                 <span>Visão</span>

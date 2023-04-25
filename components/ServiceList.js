@@ -17,7 +17,7 @@ export default function ServiceList() {
                           <div className="display-inline">
                             <div className="service-box-title">Óleos, Filtros e Fluidos</div>
                             <div className="service-box-icon">
-                                <i class="fa-regular fa-fill-drip fa-3x oranged-darken"></i>
+                                <i class="fa-solid fa-fill-drip fa-3x oranged-darken"></i>
                             </div>
                           </div>
                       </div>
@@ -26,7 +26,7 @@ export default function ServiceList() {
                           <div className="display-inline">
                             <div className="service-box-title">Cabos, Bateria e Velas</div>
                             <div className="service-box-icon">
-                                <i class="fa-regular fa-car-battery fa-3x oranged-darken"></i>
+                                <i class="fa-solid fa-car-battery fa-3x oranged-darken"></i>
                             </div>
                           </div>
                       </div>
@@ -37,7 +37,7 @@ export default function ServiceList() {
                           <div className="display-inline">
                             <div className="service-box-title">Pneus, Câmaras e Rolamentos</div>
                             <div className="service-box-icon">
-                                <i class="fa-regular fa-drum-steelpan fa-3x oranged-darken"></i>
+                                <i class="fa-solid fa-drum-steelpan fa-3x oranged-darken"></i>
                             </div>
                           </div>
                       </div>
@@ -46,7 +46,7 @@ export default function ServiceList() {
                           <div className="display-inline">
                             <div className="service-box-title">Freios, Lonas e Discos</div>
                             <div className="service-box-icon">
-                                <i class="fa-regular fa-compact-disc fa-3x oranged-darken"></i>
+                                <i class="fa-solid fa-compact-disc fa-3x oranged-darken"></i>
                             </div>
                           </div>
                       </div>
@@ -59,7 +59,7 @@ export default function ServiceList() {
                           <div className="display-inline">
                             <div className="service-box-title">Corrente, Correia e Relação</div>
                             <div className="service-box-icon">
-                                <i class="fa-regular fa-gears fa-3x oranged-darken"></i>
+                                <i class="fa-solid fa-gears fa-3x oranged-darken"></i>
                             </div>
                           </div>
                       </div>
@@ -68,7 +68,7 @@ export default function ServiceList() {
                           <div className="display-inline">
                             <div className="service-box-title">Suspensões, Hidráulicos e Pressão</div>
                             <div className="service-box-icon">
-                            <i class="fa-regular fa-gas-pump fa-3x oranged-darken"></i>
+                            <i class="fa-solid fa-gas-pump fa-3x oranged-darken"></i>
                             </div>
                           </div>
                       </div>

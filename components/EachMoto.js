@@ -5,7 +5,7 @@ export default function EachMoto(props) {
   return (
     <>
       <div className="moto-modelo">
-        <i className="fa-regular fa-motorcycle fa-2x fa-motorcycle-one"></i>
+        <i className="fa-solid fa-motorcycle fa-2x fa-motorcycle-one"></i>
         <div className="moto-specs">
           <div className="nome-moto">{props.nomeMoto ? props.nomeMoto : "Selecione a Marca"}</div>
           <div className="moto-modelo-inside">

@@ -10,7 +10,7 @@ export default function UserScore() {
               <div className="score-suffix">pontos</div>
           </div>
           <Link className="score-info" href="/">
-              <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square fa-sm"></i>
               <span>Saiba Mais</span>
           </Link>
       </div>

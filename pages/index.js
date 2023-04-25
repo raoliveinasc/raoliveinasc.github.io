@@ -55,20 +55,25 @@ export default function Home() {
           </>
         : 
         <main className={montserrat.className}>
-          <div className='landing-page-otto'>
-            <div className='welcome-title'>
-              <h1>Aguarde estamos chegando!</h1>
-              <h2>Site em construção...</h2>
-              <h3>Uma nova forma de prover serviços está por vir.</h3>
-              <Image src={logoLeading}/>
-            </div>
-            <div className='explanation-landing'>
-              <h1>Quem somos?</h1>
-              <div>A OttoMotos é uma startup na área de serviços focada em reparos rápidos de motocicletas visando prover serviços com Credibilidade de forma Transparente, Diferenciada e Conveniente. </div>
-            </div>
+        <div className='landing-page-otto'>
+          <div className='welcome-title'>
+            <Image src={logoLeading} className="logo-landing"/>
+            <p className='p1'>Aguarde estamos chegando!</p>
+            <p className='p2'>Uma nova forma de prover serviços</p>
+          </div>
+          <div className='svgone'>
+            <svg fill="#000000" width="800px" height="800px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+              <path d="M202.82812,146.82812l-72,72a3.99853,3.99853,0,0,1-5.65625,0l-72-72a3.99957,3.99957,0,0,1,5.65625-5.65625L124,206.34277V40a4,4,0,0,1,8,0V206.34277l65.17187-65.1709a3.99957,3.99957,0,0,1,5.65625,5.65625Z"/>
+            </svg>
+          </div>
+          <div className='explanation-landing'>
+            <p>Quem somos?</p>
+            <div>A OttoMotos é uma startup na área de serviços focada em reparos rápidos de motocicletas visando prover serviços com Credibilidade de forma Transparente, Diferenciada e Conveniente. </div>
             <button onClick={toggleContent} className='welcome-button'>Acessar mesmo assim</button>
           </div>
-        </main>}
+        </div>
+      </main>
+}
     </>
   )
 }
