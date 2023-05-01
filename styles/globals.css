@@ -2734,6 +2734,10 @@ input:focus ~ label, input:valid ~ label {
   .dashboard-date-constant {
     display: none;
   }
+
+  .logo-landing {
+    height: 200px;
+  }
 }
 
 @media screen and (min-width: 401px) and (max-width: 720px) {
