@@ -2994,7 +2994,7 @@ input:focus ~ label, input:valid ~ label {
   /* height: 100vh; */
   background-color: white;
   flex-direction: column;
-  padding: 150px 0px;
+  padding: 150px 0px 20px;
   margin-top: -120px;
   padding-left: 20px;
   padding-right: 20px;
