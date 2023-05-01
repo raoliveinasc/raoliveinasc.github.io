@@ -2746,7 +2746,7 @@ input:focus ~ label, input:valid ~ label {
   }
 
   .logo-landing {
-    height: 400px;
+    height: 200px;
   }
 
   .dashboard-date-constant {
