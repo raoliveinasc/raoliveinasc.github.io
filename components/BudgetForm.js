@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
+import EachMoto from "./EachMoto";
 import Login from "./Login";
-import SelectMotos from "./SelectMotos";
 
 export default function BudgetForm() {
 
@@ -66,9 +66,10 @@ export default function BudgetForm() {
             </div>
             <form className="budget-form-main">
             <div className="login-surround"><Login/></div>
-                <SelectMotos edit={true}/>
+                <EachMoto/>
                 <div className="app">
                     <h2>Serviços Oferecidos</h2>
+                    <p>Selecione um ou mais serviços desejados</p>
                     <div className="dropdown-container">
                         <Select
                         options={optionList}

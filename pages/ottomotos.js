@@ -77,7 +77,7 @@ export default function MyOttomotos() {
                 <div className='dashboard-top-inline'>
                   <div className='dashboard-date-constant'>{getFormattedDate()}</div>
                   <Link href="/profile" className='settings-button'>
-                    Configurações
+                    {personNameCondition == "Motoqueiro" ? "Finalizar Cadastro" : "Configurações"}
                     <i class="fa-solid fa-gear fa-lg"></i>
                   </Link>
                 </div>
@@ -85,7 +85,7 @@ export default function MyOttomotos() {
             {personNameCondition == "Motoqueiro" ?             
               <div className='dashboard-header notifying'>
                   <div className='dashboard-date-constant'>
-                  Para ter acesso a todas as functionalidades, finalize o seu cadastro em Configurações.
+                  Para ter acesso a todas as functionalidades, <Link href="/profile" className='oranged'>finalize seu cadastro.</Link>
                   </div>
               </div> : null
             }

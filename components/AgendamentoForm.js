@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Select from "react-select";
 import Link from "next/link";
-import SelectMotos from "./SelectMotos";
 import Login from "./Login";
+import EachMoto from "./EachMoto";
 
 export default function AgendamentoForm() {
 
@@ -56,11 +56,21 @@ export default function AgendamentoForm() {
         <div className='agendamento-form-center'>
             <div className='agendamento-form-title'>Agendamento</div>
             <div className="agendamento-form-subtitle">Se você ainda não recebeu um orçamento, <Link href="/budget">clique aqui</Link> </div>
+            <div className='budget-form-instructions'>
+                <ol>
+                    <li>Selecione sua moto</li>
+                    <li>Selecione os serviços desejados</li>
+                    <li>Selecione a data e horário</li>
+                    <li>Verifique se os dados estão corretos</li>
+                    <li>Aguarde a confirmação do agendamento pelo SMS/Email cadastrado</li>
+                </ol>
+            </div>
             <form className="agendamento-form-main">
                 <div className="login-surround"><Login/></div>
-                <SelectMotos/>
+                <EachMoto/>
                 <div className="app">
                     <h2>Serviços Oferecidos</h2>
+                    <p>Selecione um ou mais serviços desejados</p>
                     <div className="dropdown-container">
                         <Select
                         options={optionList}

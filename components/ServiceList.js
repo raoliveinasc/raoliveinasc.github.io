@@ -11,7 +11,7 @@ export default function ServiceList() {
               <div className="servicelist-subtitle">Cuide da sua motorcicleta do novo jeito mais fácil</div>
               <div className="servicelist-display">
                   <div className="service-column">
-                      <div className="service-filler"></div>
+                      {/* <div className="service-filler"></div> */}
                       <div className="service-box">
                           <div className="service-box-type">TROCA</div>
                           <div className="display-inline">
@@ -50,10 +50,10 @@ export default function ServiceList() {
                             </div>
                           </div>
                       </div>
-                      <div className="service-filler"></div>
+                      {/* <div className="service-filler"></div> */}
                   </div>
                   <div className="service-column">
-                      <div className="service-filler"></div>
+                      {/* <div className="service-filler"></div> */}
                       <div className="service-box">
                           <div className="service-box-type">TROCA</div>
                           <div className="display-inline">
