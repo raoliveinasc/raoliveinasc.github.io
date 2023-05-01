@@ -66,7 +66,7 @@ export default function Header({pathnamed}) {
             </Link>
             <div className='secondary-header'>
                 <div className='header-contacts'>Ligue Agora | TEL: +55 21 90000-0000</div>
-                <Login/>
+                <Login entryPointStatus={"login"}/>
             </div>
             <BurgerMenu/>
             </div>

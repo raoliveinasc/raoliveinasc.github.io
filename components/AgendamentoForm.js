@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import Select from "react-select";
 import Link from "next/link";
 import Login from "./Login";
+import RetrieveName from "./RetrieveName";
 import EachMoto from "./EachMoto";
 
 export default function AgendamentoForm() {
 
   // React state to manage selected options
   const [selectedOptions, setSelectedOptions] = useState();
+  const nameValid = RetrieveName();
 
   // Array of all options
   const optionList = [
@@ -66,11 +68,42 @@ export default function AgendamentoForm() {
                 </ol>
             </div>
             <form className="agendamento-form-main">
-                <div className="login-surround"><Login/></div>
-                <EachMoto/>
+              <div className="login-surround">
+              {!nameValid ? 
+              <>
+                <nav>Se você já tem uma conta Otto, entre nela. Se não, cadastre-se</nav>
+                <div>
+                  <Login entryPointStatus={"login"}/>
+                  <p>ou</p>
+                  <Login/>
+                </div>
+              </> 
+              :
+              <>
+                <div>
+                  <Login/>
+                </div>
+              </>
+            }
+              </div>
+              <h2 className="sometag">Motos Cadastradas</h2>
+                <p>Selecione sua moto:</p>
+                {
+                  nameValid ? 
+                  <>
+                  <EachMoto/>
+                  </> 
+                  :
+                  <>
+                  <div className="not-moto">
+                    <h2>Parece que você ainda não entrou na sua conta...</h2>
+                    <h4>Entre para continuar.</h4>
+                  </div>
+                  </>
+                }
                 <div className="app">
-                    <h2>Serviços Oferecidos</h2>
-                    <p>Selecione um ou mais serviços desejados</p>
+                    <h2 className="sometag">Serviços Oferecidos</h2>
+                    <p>Selecione um ou mais serviços desejados:</p>
                     <div className="dropdown-container">
                         <Select
                         options={optionList}

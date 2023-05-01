@@ -1581,7 +1581,13 @@ input:focus ~ label, input:valid ~ label {
 .agendamento-form-main {
   margin: 20px 10px 50px;
   border-top: 1px solid rgb(232, 232, 232);
-  padding-top: 15px;
+  /* padding-top: 15px; */
+}
+
+.sometag {
+  border-top: 1px solid rgb(232, 232, 232);
+  padding-top: 20px;
+  margin-top: 25px;
 }
 
 /* COMPANY PAGE */
@@ -2066,9 +2072,52 @@ input:focus ~ label, input:valid ~ label {
 .login-surround {
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: flex-start;
+  flex-direction: column;
   padding-top: 20px;
+}
+
+.login-surround div {
+  display: flex;
+  align-items: center
+}
+
+.login-surround p {
+  margin-top: 8px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.login-surround nav {
+  margin-bottom: 30px;
+  margin-top: 0px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.not-moto {
+  border: 1px solid rgb(255, 105, 0);
+  border-radius: 5px;
+  background-color: white;
+  color: rgb(255, 105, 0);
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  flex-direction: column;
+}
+
+.not-moto h2 {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+.not-moto h4 {
+  margin: 0px;
+  padding: 10px 0px;
+  font-weight: 400;
+  color: #444444;
 }
 
 .inserir-novo-serviço {

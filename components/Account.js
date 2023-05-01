@@ -10206,7 +10206,7 @@ export default function Account({ session }) {
             </select>
           </div>
           <div className="insert-moto">
-            <EachMoto nomeMoto={selectedModel ? selectedModel.charAt(0).toUpperCase()+ selectedModel.slice(1) : motoModel} especMoto={selectedSpec} anoMoto={selectedYear}/>
+            <EachMoto nomeMoto={selectedModel} especMoto={selectedSpec} anoMoto={selectedYear}/>
           </div>
         <div>
           <button

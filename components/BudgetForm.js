@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import EachMoto from "./EachMoto";
 import Login from "./Login";
+import RetrieveName from "./RetrieveName";
 
 export default function BudgetForm() {
 
   // React state to manage selected options
   const [selectedOptions, setSelectedOptions] = useState();
+  const nameValid = RetrieveName();
 
   // Array of all options
   const optionList = [
@@ -57,19 +59,51 @@ export default function BudgetForm() {
             <div className="budget-form-subtitle">Instruções para recebimento do Orçamento</div>
             <div className='budget-form-instructions'>
                 <ol>
-                    <li>Crie uma conta Otto</li>
-                    <li>Insira os dados da sua moto</li>
+                    <li>Entre na sua conta Otto</li>
+                    <li>Selecione sua moto</li>
                     <li>Selecione os serviços desejados</li>
                     <li>Verifique se os dados estão corretos</li>
                     <li>Aguarde o Email/SMS com o Orçamento</li>
                 </ol>
             </div>
             <form className="budget-form-main">
-            <div className="login-surround"><Login/></div>
-                <EachMoto/>
+            <div className="login-surround">
+            {!nameValid ? 
+              <>
+                <nav>Se você já tem uma conta Otto, entre nela. Se não, cadastre-se</nav>
+                <div>
+                  <Login entryPointStatus={"login"}/>
+                  <p>ou</p>
+                  <Login/>
+                </div>
+              </> 
+              :
+              <>
+                <div>
+                  <Login/>
+                </div>
+              </>
+            }
+            </div>
+                <h2 className="sometag">Motos Cadastradas</h2>
+                <p>Selecione sua moto:</p>
+                {
+                  nameValid ? 
+                  <>
+                  <EachMoto/>
+                  </> 
+                  :
+                  <>
+                  <div className="not-moto">
+                    <h2>Parece que você ainda não entrou na sua conta...</h2>
+                    <h4>Entre para continuar.</h4>
+                  </div>
+                  </>
+                }
+                
                 <div className="app">
-                    <h2>Serviços Oferecidos</h2>
-                    <p>Selecione um ou mais serviços desejados</p>
+                    <h2 className="sometag">Serviços Oferecidos</h2>
+                    <p>Selecione um ou mais serviços desejados:</p>
                     <div className="dropdown-container">
                         <Select
                         options={optionList}

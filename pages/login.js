@@ -4,7 +4,7 @@ import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 import Account from '@/components/Account'
 import { Montserrat } from 'next/font/google'
 import Head from 'next/head'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
 const montserrat = Montserrat({
@@ -17,13 +17,24 @@ export default function Login() {
     const session = useSession()
     const supabase = useSupabaseClient()
     const router = useRouter()
+    const status = router.query.propName;
+    const [statusImediate, setStatusImediate] = useState("")
     
     useEffect(() => {
         if(session){
             router.push('/ottomotos')
         }
     });
-    
+
+
+    useEffect(() => {
+      if (status == "Entrar") {
+        setStatusImediate("sign_in")
+      } else if (status == "Cadastre-se") {
+        setStatusImediate("sign_up")
+      }
+    }, [])
+  
     return (   
     <>
         <Head>
@@ -32,8 +43,8 @@ export default function Login() {
         </Head>
         <main className={montserrat.className && "main-login"}>
             <div className='login-form-surround'>
-                <h2>Entre na sua conta OttoMotos</h2>
-                <Auth supabaseClient={supabase}     appearance={{
+                <h2>Insira os dados para prosseguir</h2>
+                <Auth supabaseClient={supabase}   view={statusImediate}  appearance={{
                         theme: ThemeSupa,
                         variables: {
                           default: {
@@ -47,7 +58,7 @@ export default function Login() {
                       localization={{
                         variables: {
                                 "sign_up": {
-                                  "email_label": "Endereço de Email",
+                                  "email_label": "Insira um Endereço de Email",
                                   "password_label": "Crie uma senha",
                                   "email_input_placeholder": "Seu email",
                                   "password_input_placeholder": "Sua senha",
